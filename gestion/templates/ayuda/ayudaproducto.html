@@ -1,0 +1,86 @@
+{% extends 'partials/body.html' %} {% load static %} {% block contenido %}
+<main class="main">
+  <div class="cuadroH2 tituloNav mx-auto">
+    <h1 class="video-ayuda my-5">Modulo de ayuda</h1>
+    <div class="cuadroHI3-2">
+      <nav>
+        <ul >
+          <li><a class="bdnavizquierda" href="{% url 'ayudainicio' %}">Inicio</a></li>    
+          <li><a href="{% url 'ayudausuario' %}">Usuario</a></li>  
+          <li><a href="{% url 'ayudaproducto' %}">Productos</a></li>
+          <li><a href="{% url 'ayudafactura' %}">Facturas</a></li>
+          <li><a class="bdnavderecha" href="{% url 'ayudapago' %}">Pagos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="container p-5 ">
+
+    <div class="row container-video-padre">
+      <h2 class=" text-center my-2 video-ayuda1" >Producto</h2>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">1°.¿Cómo agrego un color?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/MIKwjK5xR-g" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">2°.¿Cómo edito un color?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/igJgLKEi69Y"
+          title="Editar color -  Manual de usuario." frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div> 
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">3°.¿Cómo elimino un color?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/HK6QxSuyuzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">4°.¿Cómo agrego una marca?</h2>
+        <iframe class="videos"   src="https://www.youtube.com/embed/GKbvcsWi-Rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">5°.¿Cómo edito una marca?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/jal2r5sbjFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">6°.¿Cómo elimino una marca?</h2>
+        <iframe class="videos"  src="https://www.youtube.com/embed/huPH6Sg-66o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">7°.¿Cómo agrego una talla?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/nCaitfvQY9M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">8°.¿Cómo edito una talla?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/8ze9IOzc1q0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6" >
+      <h2 class="texto-video">9°.¿Cómo elimino una talla?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/XVJtUHdelrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">10°.¿Cómo agrego un producto?</h2>
+        <iframe class="videos"  src="https://www.youtube.com/embed/UNe5Z4BpOlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">11°.¿Cómo edito un producto?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/VFwjbJlxWEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">12°.¿Cómo elimino un producto?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/1fsDUpXZ46M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">13°.¿Cómo veo los detalles de un producto?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/dh1qFdfCUbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">14°.¿Cómo creo una copia de seguridad?</h2>
+        <iframe class="videos" src="https://www.youtube.com/embed/oJSdg8NR8GU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'partials/body.html' %} {% block contenido %} {% load crispy_forms_tags %} {% load static %}
+
+<div class="contenedorcopia mx-auto">
+    <div class="row bg-tabla1 ">
+        <div class="col">
+            <h2 class="seguridad">Exportar</h2>
+
+
+            <form action="{% url 'backup' tipo='D' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" name="modelos_lista" value="Todo" id="">
+                        <label class="form-check-label" for="modelos_lista">Todo</label>
+                    </div> -->
+                    {% for modelo in ficheros %}
+                    <div class="mb-3 ">
+                        <a href="{% static 'backup' %}/{{modelo}}">{{modelo}}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <input class="btn btn-primary" type="submit" value="Generar Copia">
+            </form>
+        </div>
+
+        <div class="col">
+            <h2 class="seguridad">Importar</h2>
+            <form action="{% url 'backup' tipo='U' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %} {{form|crispy}}
+                <input class="btn btn-success" type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="col">
+            <h2 class="seguridad">Historial de Importes</h2>
+            <table class="table" id="tabla">
+                <thead class="theadtable">
+                    <tr class="text-white">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Archivo</th>
+                        <th scope="col">Fecha</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for backup in backups %}
+                    <tr>
+                        <td>{{backup.nombre}} </td>
+                        <td>{{backup.archivo.url}} </td>
+                        <td>{{backup.fecha}} </td>
+                    </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock contenido %}

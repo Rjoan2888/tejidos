@@ -1,0 +1,61 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<div class="modal fade show" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" style="display: block;">
+    <div class="modal-register mx-100">
+        <div class="modal-content">
+            <div class="modal-header titulotermino">
+         
+                <h5 class="modal-title " id="exampleModalLabel">Términos y condiciones</h5>
+               
+                <a class="btn-close"
+                data-bs-dismiss="modal" href="{% url 'index' %}" aria-label="Close"></a>
+            </div>
+        <div class="termino">
+        <div class="condiciones">
+         <spam >El sistema informático requiere que el administrador sea una persona responsable a la hora de hacer
+        el manejo de la información en el sistema teniendo como fin garantizar la información contenida en el mismo.
+        La información almacenada dentro del software se usara con fines pertinentes de lo contrario acarreara una serie de problemas legales. 
+        El administrador del sistema no está capacitado para hacer ninguna modificación dentro del software, si esto sucede la aplicación se verá expuesta
+        a presentar fallos e incluso perdida de datos. Si es necesario realizar algún cambio u actualización se debe contactar a la persona que estuvo encargada
+        del desarrollo de la aplicación o en su defecto a un experto con conocimientos previos. Se recomienda tener una copia de seguridad reciente y un único administrador,
+        donde este no debe compartir su usuario y contraseña de ingreso a algún tercero. El diseño e interfaz de la aplicación están sujetas a los requisitos del cliente 
+        por ende no es conveniente hacer cambios abruptos. La contabilidad de los productos vendidos por asociada es una cifra establecida por el sistema la cual no se puede alterar o modificar. </spam>
+        </div>
+            <script type="text/javascript">
+    function showContent() {
+        element = document.getElementById("content");
+        check = document.getElementById("check");
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+</script>
+<div class="condiciones">
+<input type="checkbox"  name="check" id="check" value="1" onchange="javascript:showContent()" />
+<b> Acepto los términos y condiciones expuestos por la unidad productiva de tejidos y variedades Tota. </b>
+</div>
+</div>    
+<div id="content" style="display: none;">
+    <div class="modal-footer">
+        <a class="btn btn-danger Btn-White "
+            data-bs-dismiss="modal" href="{% url 'index' %}">Cancelar</a>
+        <a class="btn btn-primary Btn-White"  href="{% url 'registrar' %}" role="button">Aceptar</a>
+                
+        
+        </div>
+ </div>
+            
+        </div>
+    </div>
+</div>
+  
+
+
+
+  
+
+<div class="modal-backdrop fade show"></div> 

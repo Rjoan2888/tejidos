@@ -1,0 +1,58 @@
+{% extends 'partials/body.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Pago {% endblock title %}
+{% load static %}
+{% block contenido %}
+
+<div class="container">
+        <div class="row ">
+        <a href=" {% url 'pago-tpago' %}" class="btn d-flex justify-content-center "alt="Marca"  title="Regresar" style=" margin-top: 25px; margin-bottom: 25px; width: 65px; " >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class=" opcionesTabla bi bi-arrow-left-square-fill  " viewBox="0 0 16 16">
+            <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="row p-1">
+        
+
+        <div class="col-md-12 p-4 bg-tabla">
+            <p class="txtMainI">Pago asociada  {{factura.id}}</p>
+        <table class="table bg-white table-bordered results" id="tabla">
+          <thead class="theadtable">
+            <tr class="text-white">
+              <th scope="col">Producto</th>
+              <th scope="col">Talla</th>   
+              <th scope="col">Marca</th>    
+              <th scope="col">color</th>           
+              <th scope="col">Cantidad</th>
+              <th scope="col">Valor unitario</th>
+              <th scope="col">Valor pago</th>
+
+       
+              
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in detalles_p %}
+           
+            <tr>
+              <td class="dtr-control sorting_1">{{item.detalle.producto.nombre}}</td>
+              <td class="dtr-control sorting_1">{{item.detalle.producto.talla}}</td>
+              <td class="dtr-control sorting_1">{{item.detalle.producto.marca}}</td>
+              <td class="dtr-control sorting_1">{{item.detalle.producto.color}}</td>
+              <td class="dt-body-right dtr-hidden">{{item.detalle.cantidad_detalle}}</td>
+              <td class="dt-body-right dtr-hidden">{{item.valor}}</td>    
+              <td class="dt-body-right dtr-hidden">{{item.total}}</td>
+              
+            </tr>
+            
+            {% endfor %}
+          </tbody>
+        </table> <h2><b>Total a pagar :{{total}}</b></h2>
+        </div>
+       
+    </div>
+
+</div>
+
+{% endblock contenido %}

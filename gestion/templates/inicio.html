@@ -1,0 +1,31 @@
+{% extends 'partials/body.html' %}
+{% load static %}
+{% block contenido %}
+<main class="main">
+    <div>
+        <div class="contenedorMain">
+            <p class="txtMainI">Bienvenido al sistema</p>
+            <div class="navTabla00">
+            <div class="mx-auto col-xl-7">
+                    <div class="card-body">
+                        <canvas id="entrega-fecha" width="100%" height="40"></canvas>
+                        
+                    </div>
+                </div>
+            </div>
+        
+                <div class="navTabla00 ">
+                    <canvas id="ventas-chart" width="400" height="200"></canvas>
+                    <!-- Datos chart area-->
+                    {% for tipo,venta in ventas.items %}
+                    <div class="d-none" id="data-area-{{tipo}}">{{venta}}</div>
+                    {% endfor %}
+                    
+                    
+                    {% endblock %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</main>

@@ -1,0 +1,36 @@
+{% extends 'partials/body.html' %} {% load static %} {% block contenido %}
+<main class="main">
+  <div class="cuadroH2 tituloNav mx-auto">
+    <h1 class="video-ayuda my-5">Modulo de ayuda</h1>
+    <div class="cuadroHI3-2">
+      <nav>
+        <ul >
+          <li><a class="bdnavizquierda" href="{% url 'ayudainicio' %}">Inicio</a></li>    
+          <li><a href="{% url 'ayudausuario' %}">Usuario</a></li>  
+          <li><a href="{% url 'ayudaproducto' %}">Productos</a></li>
+          <li><a href="{% url 'ayudafactura' %}">Facturas</a></li>
+          <li><a class="bdnavderecha" href="{% url 'ayudapago' %}">Pagos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="container p-5 ">
+
+    <div class="row container-video-padre">
+      <h2 class=" text-center my-2 video-ayuda1" >Usuario</h2>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">4°.¿Cómo agrego un color?</h2>
+        <iframe  class="videos"  src="https://www.youtube.com/embed/MIKwjK5xR-g" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="container-video col-md-6">
+        <h2 class="texto-video">24°.¿Cómo creo una copia de seguridad?</h2>
+        <iframe class="videos" src="https://www.youtube.com/embed/oJSdg8NR8GU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+    </div>
+  </div>
+</main>
+{% endblock %}

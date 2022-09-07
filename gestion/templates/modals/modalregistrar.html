@@ -1,0 +1,59 @@
+<!-- Modal -->
+{% load crispy_forms_tags %}
+{% load static %}
+<main class="main">
+  <div class="contenedorMain p-5 ">
+    <div id="carouselExampleControls" class="carousel slide border-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active img">
+          <img class="imgCarousel" src="{% static './img/botso3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img class="imgCarousel" src="{% static './img/cabezas.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img class="imgCarousel" src="{% static './img/cabezas.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+    <marquee><p class="marqueeTxt">Mujeres Totenses Tejiendo Sueños</p></marquee>
+  </div>
+  
+</main>
+<div class="modal fade show" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" style="display: block;">
+    <div class="modal-register ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear cuenta</h5>
+                <a class="btn-close"
+                data-bs-dismiss="modal" href="{% url 'index' %}" aria-label="Close"></a>
+            </div>
+
+            <div class="registrar mx-auto container">
+       
+                <form action="" method="POST">
+                  {{ form.as_p }}
+                  {% csrf_token %}
+                    
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger Btn-White "
+                    data-bs-dismiss="modal" href="{% url 'index' %}">Cancelar</a>
+                <a href="{% url 'index' %}"><input type="submit" value="Registrar" class="btn btn-success" value="Registrar"></a>
+                </form>
+              </div>
+        </div>
+    </div>
+</div>
+  
+
+<div class="modal-backdrop fade show"></div>

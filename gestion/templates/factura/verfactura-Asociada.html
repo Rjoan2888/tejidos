@@ -1,0 +1,73 @@
+{% extends 'partials/body.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+
+
+
+<div class="padding">
+    <h1 class="text-center font-4em">Datos de la factura</h1>
+</div>
+<div class="column ver-d p-5 ">
+    <div class="bg-ver w-tableVer my-5 mx-auto  ">
+        <div class="contenedorTabla  tablaProducto  ">
+            <table class=" table results  centrar font-2em tablaVer" >
+                <thead class="borderT">
+                  <tr >
+                      <th scope="col"  >Fecha :</th>
+                      <th scope="col" >{{factura.fecha}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col"  >Tipo de usuario :</th>
+                    <th scope="col" >{{factura.usuario.rol}}</th>
+                </tr>
+                <tr>
+                    <th scope="col"  >Usuario :</th>
+                    <th scope="col">{{factura.usuario.Unombre}} </th>
+                </tr>
+                <tr>
+                    <th scope="col"  >Tipo factura :</th>
+                    <th scope="col">{{factura.tipofactura}}</th>
+                </tr>
+            </table>
+        </div>      
+    </div>
+
+    <div class="col-md-6 p-4 bg-tabla ver-Detalle mx-auto">
+        <p class="txtMainI">Detalle factura  {{factura.id}}</p>
+    <table class="table bg-white table-bordered results" >
+      <thead class="theadtable">
+        <tr class="text-white">
+          <th scope="col">Producto</th>            
+          <th scope="col">Cantidad</th>   
+          <th scope="col">Pago vendedora</th>    
+          <th scope="col">Total</th>   
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for asociada in asociadas %}
+        {% if  asociada.estado == "Abierta"  %}
+    
+        <tr>
+          <td class="dtr-control sorting_1">{{asociada.producto.nombre}}</td>
+          <td class="dtr-control sorting_1">{{asociada.producto.talla}}</td>
+          <td class="dtr-control sorting_1">{{detalle.}}</td>
+          <td class="dtr-control sorting_1">{{detalle.}}</td>
+    
+            {% endif %}
+          </td>
+        </tr>
+        
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+</div>
+
+
+   
+
+
+{% endblock contenido %}
+
